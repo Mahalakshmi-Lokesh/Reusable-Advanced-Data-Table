@@ -1,0 +1,77 @@
+<template>
+    <lightning-card title={cardTitle}>
+
+        <slot name="header"></slot>
+
+        <div class="slds-p-around_medium">
+
+            <!-- TOP RIGHT BUTTONS -->
+            <div class="slds-grid slds-grid_align-end slds-m-bottom_small">
+                <lightning-button label="Refresh" onclick={handleRefresh} class="slds-m-right_small">
+                </lightning-button>
+
+                <lightning-button label="Export CSV" onclick={handleExport}>
+                </lightning-button>
+            </div>
+
+            <!-- SEARCH BAR (FULL WIDTH) -->
+            <div class="slds-m-bottom_small">
+                <lightning-input type="search" label="Search" onchange={handleSearch}>
+                </lightning-input>
+            </div>
+
+            <!-- COLUMN FILTERS (RIGHT SIDE BELOW SEARCH) -->
+            <div class="slds-grid slds-grid_align-end slds-gutters slds-m-bottom_small">
+
+                <div class="slds-col slds-size_1-of-4">
+                    <lightning-input label="Filter by Name" type="search" data-field="Name"
+                        onchange={handleColumnFilter}>
+                    </lightning-input>
+                </div>
+
+                <div class="slds-col slds-size_1-of-4">
+                    <lightning-input label="Filter by Industry" type="search" data-field="Industry"
+                        onchange={handleColumnFilter}>
+                    </lightning-input>
+                </div>
+
+            </div>
+
+            <!-- STATES -->
+            <template if:true={isLoading}>
+                <lightning-spinner></lightning-spinner>
+            </template>
+
+            <template if:true={error}>
+                <p class="slds-text-color_error">Error loading data</p>
+            </template>
+
+            <!-- TABLE -->
+            <template if:true={data.length}>
+                <lightning-datatable key-field="Id" data={data} columns={columns} onsort={handleSort}
+                    sorted-by={sortedBy} sorted-direction={sortedDirection} draft-values={draftValues}
+                    onsave={handleSave} onrowaction={handleRowAction}>
+                </lightning-datatable>
+            </template>
+
+            <template if:false={data.length}>
+                <p class="slds-text-align_center">No records found</p>
+            </template>
+
+            <!-- PAGINATION -->
+            <div class="slds-m-top_medium slds-text-align_center">
+                <lightning-button label="Prev" onclick={prevPage}></lightning-button>
+
+                <span class="slds-m-horizontal_small">
+                    Page {pageNumber} of {totalPages}
+                </span>
+
+                <lightning-button label="Next" onclick={nextPage}></lightning-button>
+            </div>
+
+        </div>
+
+        <slot name="footer"></slot>
+
+    </lightning-card>
+</template>
