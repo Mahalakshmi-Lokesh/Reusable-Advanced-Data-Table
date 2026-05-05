@@ -1,18 +1,80 @@
-# Salesforce DX Project: Next Steps
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+# Reusable LWC Data Table Component
 
-## How Do You Plan to Deploy Your Changes?
+## Overview
+A **generic, reusable Lightning Web Component (LWC)** for displaying Salesforce data with advanced features like search, filtering, pagination, and inline editing.  
+Supports both **standard and custom objects**.
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+## Features
+- Dynamic object & field configuration  
+- Global search + column filtering  
+- Server-side sorting & pagination  
+- Inline editing (LDS)  
+- Custom row actions  
+- CSV export (Apex + JS)  
+- Slots for header & footer  
+- Loading, error & no-data states  
 
-## Configure Your Salesforce DX Project
+## Prerequisites
+- Salesforce CLI 
+- VS Code with Salesforce Extensions
+- Dev Hub enabled
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+## Setup Instructions
 
-## Read All About It
+### 1) Clone Repository:
+git clone https://github.com/<your-username>/reusable-lwc-datatable.git
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+cd reusable-lwc-datatable
+
+### 2️) Create Scratch Org:
+sf org create scratch -f config/project-scratch-def.json -a demoOrg -d 30
+
+### 3) Set Default Org:
+sf config set target-org demoOrg
+
+### 4) Deploy Code:
+sf project deploy start
+
+### 5) Open Org
+sf org open
+
+## Functional Capabilities
+
+### Global Search
+Search across records dynamically.
+### Column Filtering
+Filter specific fields like:
+- Name
+- Industry 
+### Sorting
+Click column headers to sort (server-side).
+### Pagination
+- Server-side pagination using OFFSET 
+- Page navigation supported 
+### Inline Editing
+- Edit records directly in table 
+- Uses Lightning Data Service (updateRecord) 
+### Row Actions
+Custom actions like:
+- View 
+- Delete 
+Defined in parent component.
+
+## CSV Export
+Click Export CSV to download data.
+- Generated using Apex
+- Download triggered via JavaScript
+
+## Test Data
+If no records are visible:
+- Create sample Account records manually OR
+- Enable sample data in scratch org:
+  
+"hasSampleData": true
+
+## Demo
+👉 (Add your demo video link here)
+
+## GitHub Repository
+👉 https://github.com/<your-username>/reusable-lwc-datatable
