@@ -73,8 +73,5 @@ If no records are visible:
   
 "hasSampleData": true
 
-## Demo
-https://www.awesomescreenshot.com/video/52225700?key=ffa56bac708580c57d0377a47aa16263
-
 ## GitHub Repository
 https://github.com/Mahalakshmi-Lokesh/Reusable-Advanced-Data-Table.git
