@@ -74,7 +74,7 @@ If no records are visible:
 "hasSampleData": true
 
 ## Demo
-👉 (Add your demo video link here)
+https://www.awesomescreenshot.com/video/52225700?key=ffa56bac708580c57d0377a47aa16263
 
 ## GitHub Repository
-👉 https://github.com/<your-username>/reusable-lwc-datatable
+https://github.com/<your-username>/reusable-lwc-datatable
