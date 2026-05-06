@@ -23,7 +23,7 @@ Supports both **standard and custom objects**.
 ## Setup Instructions
 
 ### 1) Clone Repository:
-git clone https://github.com/<your-username>/reusable-lwc-datatable.git
+git clone https://github.com/Mahalakshmi-Lokesh/Reusable-Advanced-Data-Table.git
 
 cd reusable-lwc-datatable
 
@@ -77,4 +77,4 @@ If no records are visible:
 https://www.awesomescreenshot.com/video/52225700?key=ffa56bac708580c57d0377a47aa16263
 
 ## GitHub Repository
-https://github.com/<your-username>/reusable-lwc-datatable
+https://github.com/Mahalakshmi-Lokesh/Reusable-Advanced-Data-Table.git
