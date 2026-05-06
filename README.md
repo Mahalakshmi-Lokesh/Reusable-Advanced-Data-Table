@@ -28,7 +28,7 @@ git clone https://github.com/Mahalakshmi-Lokesh/Reusable-Advanced-Data-Table.git
 cd reusable-lwc-datatable
 
 ### 2️) Create Scratch Org:
-sf org create scratch -f config/project-scratch-def.json -a demoOrg -d 30
+sf org create scratch -f config/project-scratch-def.json -a demoOrg -d 
 
 ### 3) Set Default Org:
 sf config set target-org demoOrg
